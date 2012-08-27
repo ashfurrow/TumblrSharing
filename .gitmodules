@@ -1,0 +1,3 @@
+[submodule "Simple-OAuth"]
+	path = Simple-OAuth
+	url = git@github.com:AshFurrow/Simple-OAuth.git

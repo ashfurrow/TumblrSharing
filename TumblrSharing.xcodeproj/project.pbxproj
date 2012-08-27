@@ -10,6 +10,11 @@
 		5EC594B515EC38EE001106DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC594B415EC38EE001106DA /* Foundation.framework */; };
 		5EC594BA15EC38EE001106DA /* TumblrSharing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC594B915EC38EE001106DA /* TumblrSharing.h */; };
 		5EC594BC15EC38EE001106DA /* TumblrSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594BB15EC38EE001106DA /* TumblrSharing.m */; };
+		5EC594CC15EC3937001106DA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC594CB15EC3937001106DA /* SenTestingKit.framework */; };
+		5EC594CE15EC3937001106DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC594CD15EC3937001106DA /* UIKit.framework */; };
+		5EC594CF15EC3937001106DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC594B415EC38EE001106DA /* Foundation.framework */; };
+		5EC594D515EC3937001106DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EC594D315EC3937001106DA /* InfoPlist.strings */; };
+		5EC594D815EC3937001106DA /* Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594D715EC3937001106DA /* Testing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +36,14 @@
 		5EC594B815EC38EE001106DA /* TumblrSharing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TumblrSharing-Prefix.pch"; sourceTree = "<group>"; };
 		5EC594B915EC38EE001106DA /* TumblrSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TumblrSharing.h; sourceTree = "<group>"; };
 		5EC594BB15EC38EE001106DA /* TumblrSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TumblrSharing.m; sourceTree = "<group>"; };
+		5EC594CA15EC3937001106DA /* Testing.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Testing.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC594CB15EC3937001106DA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5EC594CD15EC3937001106DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5EC594D215EC3937001106DA /* Testing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Testing-Info.plist"; sourceTree = "<group>"; };
+		5EC594D415EC3937001106DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5EC594D615EC3937001106DA /* Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Testing.h; sourceTree = "<group>"; };
+		5EC594D715EC3937001106DA /* Testing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Testing.m; sourceTree = "<group>"; };
+		5EC594D915EC3937001106DA /* Testing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Testing-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +55,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EC594C615EC3937001106DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC594CC15EC3937001106DA /* SenTestingKit.framework in Frameworks */,
+				5EC594CE15EC3937001106DA /* UIKit.framework in Frameworks */,
+				5EC594CF15EC3937001106DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC594B615EC38EE001106DA /* TumblrSharing */,
+				5EC594D015EC3937001106DA /* Testing */,
 				5EC594B315EC38EE001106DA /* Frameworks */,
 				5EC594B215EC38EE001106DA /* Products */,
 			);
@@ -58,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC594B115EC38EE001106DA /* libTumblrSharing.a */,
+				5EC594CA15EC3937001106DA /* Testing.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				5EC594B415EC38EE001106DA /* Foundation.framework */,
+				5EC594CB15EC3937001106DA /* SenTestingKit.framework */,
+				5EC594CD15EC3937001106DA /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,6 +111,26 @@
 			isa = PBXGroup;
 			children = (
 				5EC594B815EC38EE001106DA /* TumblrSharing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EC594D015EC3937001106DA /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594D615EC3937001106DA /* Testing.h */,
+				5EC594D715EC3937001106DA /* Testing.m */,
+				5EC594D115EC3937001106DA /* Supporting Files */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		5EC594D115EC3937001106DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594D215EC3937001106DA /* Testing-Info.plist */,
+				5EC594D315EC3937001106DA /* InfoPlist.strings */,
+				5EC594D915EC3937001106DA /* Testing-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +155,24 @@
 			productReference = 5EC594B115EC38EE001106DA /* libTumblrSharing.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		5EC594C915EC3937001106DA /* Testing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EC594DC15EC3937001106DA /* Build configuration list for PBXNativeTarget "Testing" */;
+			buildPhases = (
+				5EC594C515EC3937001106DA /* Sources */,
+				5EC594C615EC3937001106DA /* Frameworks */,
+				5EC594C715EC3937001106DA /* Resources */,
+				5EC594C815EC3937001106DA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Testing;
+			productName = Testing;
+			productReference = 5EC594CA15EC3937001106DA /* Testing.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,9 +195,37 @@
 			projectRoot = "";
 			targets = (
 				5EC594B015EC38EE001106DA /* TumblrSharing */,
+				5EC594C915EC3937001106DA /* Testing */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EC594C715EC3937001106DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC594D515EC3937001106DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EC594C815EC3937001106DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EC594AD15EC38EE001106DA /* Sources */ = {
@@ -143,7 +236,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EC594C515EC3937001106DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC594D815EC3937001106DA /* Testing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5EC594D315EC3937001106DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EC594D415EC3937001106DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5EC594BD15EC38EE001106DA /* Debug */ = {
@@ -216,6 +328,36 @@
 			};
 			name = Release;
 		};
+		5EC594DA15EC3937001106DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Testing/Testing-Prefix.pch";
+				INFOPLIST_FILE = "Testing/Testing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5EC594DB15EC3937001106DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Testing/Testing-Prefix.pch";
+				INFOPLIST_FILE = "Testing/Testing-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -233,6 +375,15 @@
 			buildConfigurations = (
 				5EC594C015EC38EE001106DA /* Debug */,
 				5EC594C115EC38EE001106DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EC594DC15EC3937001106DA /* Build configuration list for PBXNativeTarget "Testing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EC594DA15EC3937001106DA /* Debug */,
+				5EC594DB15EC3937001106DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
