@@ -1,0 +1,242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EC594B515EC38EE001106DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC594B415EC38EE001106DA /* Foundation.framework */; };
+		5EC594BA15EC38EE001106DA /* TumblrSharing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC594B915EC38EE001106DA /* TumblrSharing.h */; };
+		5EC594BC15EC38EE001106DA /* TumblrSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594BB15EC38EE001106DA /* TumblrSharing.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5EC594AF15EC38EE001106DA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				5EC594BA15EC38EE001106DA /* TumblrSharing.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5EC594B115EC38EE001106DA /* libTumblrSharing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTumblrSharing.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC594B415EC38EE001106DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5EC594B815EC38EE001106DA /* TumblrSharing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TumblrSharing-Prefix.pch"; sourceTree = "<group>"; };
+		5EC594B915EC38EE001106DA /* TumblrSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TumblrSharing.h; sourceTree = "<group>"; };
+		5EC594BB15EC38EE001106DA /* TumblrSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TumblrSharing.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EC594AE15EC38EE001106DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC594B515EC38EE001106DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EC594A615EC38EE001106DA = {
+			isa = PBXGroup;
+			children = (
+				5EC594B615EC38EE001106DA /* TumblrSharing */,
+				5EC594B315EC38EE001106DA /* Frameworks */,
+				5EC594B215EC38EE001106DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EC594B215EC38EE001106DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594B115EC38EE001106DA /* libTumblrSharing.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EC594B315EC38EE001106DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594B415EC38EE001106DA /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EC594B615EC38EE001106DA /* TumblrSharing */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594B915EC38EE001106DA /* TumblrSharing.h */,
+				5EC594BB15EC38EE001106DA /* TumblrSharing.m */,
+				5EC594B715EC38EE001106DA /* Supporting Files */,
+			);
+			path = TumblrSharing;
+			sourceTree = "<group>";
+		};
+		5EC594B715EC38EE001106DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594B815EC38EE001106DA /* TumblrSharing-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EC594B015EC38EE001106DA /* TumblrSharing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EC594BF15EC38EE001106DA /* Build configuration list for PBXNativeTarget "TumblrSharing" */;
+			buildPhases = (
+				5EC594AD15EC38EE001106DA /* Sources */,
+				5EC594AE15EC38EE001106DA /* Frameworks */,
+				5EC594AF15EC38EE001106DA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TumblrSharing;
+			productName = TumblrSharing;
+			productReference = 5EC594B115EC38EE001106DA /* libTumblrSharing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EC594A815EC38EE001106DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = AF;
+			};
+			buildConfigurationList = 5EC594AB15EC38EE001106DA /* Build configuration list for PBXProject "TumblrSharing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5EC594A615EC38EE001106DA;
+			productRefGroup = 5EC594B215EC38EE001106DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EC594B015EC38EE001106DA /* TumblrSharing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EC594AD15EC38EE001106DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EC594BC15EC38EE001106DA /* TumblrSharing.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5EC594BD15EC38EE001106DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5EC594BE15EC38EE001106DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EC594C015EC38EE001106DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TumblrSharing.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TumblrSharing/TumblrSharing-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5EC594C115EC38EE001106DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TumblrSharing.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TumblrSharing/TumblrSharing-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EC594AB15EC38EE001106DA /* Build configuration list for PBXProject "TumblrSharing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EC594BD15EC38EE001106DA /* Debug */,
+				5EC594BE15EC38EE001106DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EC594BF15EC38EE001106DA /* Build configuration list for PBXNativeTarget "TumblrSharing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EC594C015EC38EE001106DA /* Debug */,
+				5EC594C115EC38EE001106DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EC594A815EC38EE001106DA /* Project object */;
+}
