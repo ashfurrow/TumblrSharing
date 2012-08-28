@@ -1,6 +1,6 @@
-Pro-TumblrSharing
+TumblrSharing
 =================
 
 Simple sharing to Tumblr's v2 OAuth API
 
-This isn't done yet. In fact, I don't know that I can say it's even started.
+I've hit a wall with Tumblr's access_token endpoint where they appear to be asking for a parameter not normally associated with xAuth calls. I'm (investigating)[https://groups.google.com/forum/#!topic/tumblr-api/J3dHCi0YwOA] now.
