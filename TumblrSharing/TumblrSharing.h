@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TumblrSharing : NSObject
+@interface TumblrSession : NSObject
+
+@property (nonatomic, copy) NSString *host;
+@property (nonatomic, strong) NSString *consumerKey;
+@property (nonatomic, strong) NSString *consumerSecret;
+
+@property (nonatomic, readonly) NSString *authToken;
+@property (nonatomic, readonly) NSString *authSecret;
+
+-(NSInteger)authenticateWithUserName:(NSString *)username password:(NSString *)password;
 
 @end

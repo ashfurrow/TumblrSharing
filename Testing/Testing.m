@@ -7,14 +7,21 @@
 //
 
 #import "Testing.h"
+#import "TumblrSharing.h"
 
 @implementation Testing
+{
+    TumblrSession *session;
+}
 
 - (void)setUp
 {
     [super setUp];
     
-    // Set-up code here.
+    session = [[TumblrSession alloc] init];
+    session.host = @"http://www.tumblr.com";
+    session.consumerKey = @"CHANGE ME";
+    session.consumerSecret = @"CHANGE ME";
 }
 
 - (void)tearDown
@@ -26,7 +33,10 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in Testing");
+    NSInteger responseCode = [session authenticateWithUserName:@"CHANGE ME" password:@"CHANGE ME"];
+    
+    STAssertEquals(200, responseCode, @"Tumblr Authentication returned non-200 response: %d", responseCode);
+    
 }
 
 @end

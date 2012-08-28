@@ -15,6 +15,10 @@
 		5EC594CF15EC3937001106DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC594B415EC38EE001106DA /* Foundation.framework */; };
 		5EC594D515EC3937001106DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EC594D315EC3937001106DA /* InfoPlist.strings */; };
 		5EC594D815EC3937001106DA /* Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594D715EC3937001106DA /* Testing.m */; };
+		5EC594EB15EC3AEF001106DA /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594E415EC3AEF001106DA /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5EC594EC15EC3AEF001106DA /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594E615EC3AEF001106DA /* OAuth+Additions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5EC594ED15EC3AEF001106DA /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594E815EC3AEF001106DA /* OAuthCore.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5EC594F015EC3DC4001106DA /* TumblrSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC594BB15EC38EE001106DA /* TumblrSharing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +48,12 @@
 		5EC594D615EC3937001106DA /* Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Testing.h; sourceTree = "<group>"; };
 		5EC594D715EC3937001106DA /* Testing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Testing.m; sourceTree = "<group>"; };
 		5EC594D915EC3937001106DA /* Testing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Testing-Prefix.pch"; sourceTree = "<group>"; };
+		5EC594E315EC3AEF001106DA /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		5EC594E415EC3AEF001106DA /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		5EC594E515EC3AEF001106DA /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		5EC594E615EC3AEF001106DA /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		5EC594E715EC3AEF001106DA /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		5EC594E815EC3AEF001106DA /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 		5EC594A615EC38EE001106DA = {
 			isa = PBXGroup;
 			children = (
+				5EC594E115EC3AEF001106DA /* Simple-OAuth */,
 				5EC594B615EC38EE001106DA /* TumblrSharing */,
 				5EC594D015EC3937001106DA /* Testing */,
 				5EC594B315EC38EE001106DA /* Frameworks */,
@@ -133,6 +144,19 @@
 				5EC594D915EC3937001106DA /* Testing-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EC594E115EC3AEF001106DA /* Simple-OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				5EC594E315EC3AEF001106DA /* NSData+Base64.h */,
+				5EC594E415EC3AEF001106DA /* NSData+Base64.m */,
+				5EC594E515EC3AEF001106DA /* OAuth+Additions.h */,
+				5EC594E615EC3AEF001106DA /* OAuth+Additions.m */,
+				5EC594E715EC3AEF001106DA /* OAuthCore.h */,
+				5EC594E815EC3AEF001106DA /* OAuthCore.m */,
+			);
+			path = "Simple-OAuth";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC594D815EC3937001106DA /* Testing.m in Sources */,
+				5EC594EB15EC3AEF001106DA /* NSData+Base64.m in Sources */,
+				5EC594EC15EC3AEF001106DA /* OAuth+Additions.m in Sources */,
+				5EC594ED15EC3AEF001106DA /* OAuthCore.m in Sources */,
+				5EC594F015EC3DC4001106DA /* TumblrSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
