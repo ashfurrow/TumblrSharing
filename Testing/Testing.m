@@ -20,8 +20,8 @@
     
     session = [[TumblrSession alloc] init];
     session.host = @"http://www.tumblr.com";
-    session.consumerKey = @"CHANGE ME";
-    session.consumerSecret = @"CHANGE ME";
+    session.consumerKey = @"__CHANGE_ME__";
+    session.consumerSecret = @"__CHANGE_ME__";
 }
 
 - (void)tearDown
@@ -33,9 +33,9 @@
 
 - (void)testExample
 {
-    NSInteger responseCode = [session authenticateWithUserName:@"CHANGE ME" password:@"CHANGE ME"];
+    NSDictionary *authTokens = [session authenticateWithUserName:@"__CHANGE_ME__" password:@"__CHANGE_ME__"];
     
-    STAssertEquals(200, responseCode, @"Tumblr Authentication returned non-200 response: %d", responseCode);
+    STAssertNotNil(authTokens, @"Tumblr Authentication returned nil auth tokens");
     
 }
 
