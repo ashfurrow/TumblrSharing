@@ -17,6 +17,6 @@
 @property (nonatomic, readonly) NSString *authToken;
 @property (nonatomic, readonly) NSString *authSecret;
 
--(NSInteger)authenticateWithUserName:(NSString *)username password:(NSString *)password;
+-(NSDictionary *)authenticateWithUserName:(NSString *)username password:(NSString *)password;
 
 @end

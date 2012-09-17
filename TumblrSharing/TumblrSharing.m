@@ -32,35 +32,8 @@
 
 @implementation TumblrSession
 
--(NSDictionary *)requestTokenAndSecret
-{
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/oauth/request_token", self.host]];
-    NSMutableURLRequest *requestTokenURLRequest = [NSMutableURLRequest requestWithURL:requestURL];
-    [requestTokenURLRequest setHTTPMethod:@"POST"];
-        
-    NSString *requestTokenAuthorizationHeader = OAuthorizationHeader(requestURL, @"POST", nil, self.consumerKey, self.consumerSecret, nil, nil);
-    
-    [requestTokenURLRequest setHTTPMethod:@"POST"];
-    [requestTokenURLRequest setValue:requestTokenAuthorizationHeader forHTTPHeaderField:@"Authorization"];
-    
-    NSError *error;
-    NSHTTPURLResponse *response;
-    NSData *data = [NSURLConnection sendSynchronousRequest:requestTokenURLRequest returningResponse:&response error:&error];
-    
-    NSString *returnedRequestTokenString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    NSDictionary *returnedRequestTokenDictionary = [returnedRequestTokenString ab_parseURLQueryString];
-    
-    return returnedRequestTokenDictionary;
-}
-
--(NSInteger)authenticateWithUserName:(NSString *)username password:(NSString *)password
-{
-    NSDictionary *returnedRequestTokenDictionary = [self requestTokenAndSecret];
-    
-    NSString *requestOauthToken = [returnedRequestTokenDictionary valueForKey:@"oauth_token"];
-    NSString *requestOauthSecret = [returnedRequestTokenDictionary valueForKey:@"oauth_token_secret"];
-    
+-(NSDictionary *)authenticateWithUserName:(NSString *)username password:(NSString *)password
+{    
     NSMutableURLRequest *accessTokenURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.tumblr.com/oauth/access_token"]]];
     [accessTokenURLRequest setHTTPMethod:@"POST"];
     
@@ -74,8 +47,7 @@
         
     NSData *bodyData = [accessTokenParamsAsString dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSString *accessTokenAuthorizationHeader = OAuthorizationHeader(accessTokenURLRequest.URL, @"POST", bodyData, self.consumerKey, self.consumerSecret, requestOauthToken, requestOauthSecret);
-    
+    NSString *accessTokenAuthorizationHeader = OAuthorizationHeader(accessTokenURLRequest.URL, @"POST", bodyData, self.consumerKey, self.consumerSecret, nil, nil);
     
     [accessTokenURLRequest setValue:accessTokenAuthorizationHeader forHTTPHeaderField:@"Authorization"];
     [accessTokenURLRequest setHTTPBody:bodyData];
@@ -87,9 +59,18 @@
     
     NSString *returnedAccessTokenString = [[NSString alloc] initWithData:returnedAccessTokenData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"%@", returnedAccessTokenString);
+    if (response.statusCode != 200)
+    {
+        NSLog(@"Error: %@", error);
+        return nil;
+    }
     
-    return response.statusCode;
+    NSDictionary *authDictionary = [returnedAccessTokenString ab_parseURLQueryString];
+    
+    _authToken = authDictionary[@"oauth_token"];
+    _authSecret = authDictionary[@"oauth_token_secret"];
+    
+    return authDictionary;
 }
 
 @end
