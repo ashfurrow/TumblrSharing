@@ -73,4 +73,68 @@
     return authDictionary;
 }
 
+-(NSArray *)retrievListOfBlogs
+{
+    NSMutableURLRequest *accessTokenURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.tumblr.com/v2/user/info"]]];
+    [accessTokenURLRequest setHTTPMethod:@"POST"];
+    
+    NSString *accessTokenAuthorizationHeader = OAuthorizationHeader(accessTokenURLRequest.URL, @"POST", nil, self.consumerKey, self.consumerSecret, self.authToken, self.authSecret);
+    
+    [accessTokenURLRequest setValue:accessTokenAuthorizationHeader forHTTPHeaderField:@"Authorization"];
+    
+    NSError *error;
+    NSHTTPURLResponse *response;
+    
+    NSData *returnedData = [NSURLConnection sendSynchronousRequest:accessTokenURLRequest returningResponse:&response error:&error];
+    
+    if (response.statusCode != 200)
+    {
+        NSLog(@"Error: %@", error);
+        return nil;
+    }
+    
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:returnedData options:0 error:nil];
+
+    _blogArray = [responseDictionary valueForKeyPath:@"response.user.blogs"];
+    _defaultBlogName = [responseDictionary valueForKeyPath:@"response.user.name"];
+    
+    return _blogArray;
+}
+
+-(BOOL)postToTumblrDomain:(NSString *)domain title:(NSString *)title body:(NSString *)body
+{
+    NSMutableURLRequest *postURLRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.tumblr.com/v2/blog/%@.tumblr.com/post", domain]]];
+    [postURLRequest setHTTPMethod:@"POST"];
+    
+    NSDictionary *postOptions = @{ @"type" : @"text", @"format" : @"html", @"title": title, @"body": body };
+    
+    NSMutableString *paramsAsString = [[NSMutableString alloc] init];
+    
+    [postOptions enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [paramsAsString appendFormat:@"%@=%@&", key, obj];
+    }];
+    
+    NSData *bodyData = [paramsAsString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *accessTokenAuthorizationHeader = OAuthorizationHeader(postURLRequest.URL, @"POST", bodyData, self.consumerKey, self.consumerSecret, self.authToken, self.authSecret);
+    
+    [postURLRequest setValue:accessTokenAuthorizationHeader forHTTPHeaderField:@"Authorization"];
+    [postURLRequest setHTTPBody:bodyData];
+    
+    NSError *error;
+    NSHTTPURLResponse *response;
+    
+    NSData *returnedData = [NSURLConnection sendSynchronousRequest:postURLRequest returningResponse:&response error:&error];
+    
+//    NSString *returnedString = [[NSString alloc] initWithData:returnedData encoding:NSUTF8StringEncoding];
+    
+    if (response.statusCode >= 400)
+    {
+        NSLog(@"Error: %@", error);
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

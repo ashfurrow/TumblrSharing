@@ -17,6 +17,11 @@
 @property (nonatomic, readonly) NSString *authToken;
 @property (nonatomic, readonly) NSString *authSecret;
 
+@property (nonatomic, readonly) NSArray *blogArray;
+@property (nonatomic, readonly) NSString *defaultBlogName;
+
 -(NSDictionary *)authenticateWithUserName:(NSString *)username password:(NSString *)password;
+-(NSArray *)retrievListOfBlogs;
+-(BOOL)postToTumblrDomain:(NSString *)domain title:(NSString *)title body:(NSString *)body;
 
 @end

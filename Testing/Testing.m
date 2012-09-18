@@ -33,10 +33,17 @@
 
 - (void)testExample
 {
-    NSDictionary *authTokens = [session authenticateWithUserName:@"__CHANGE_ME__" password:@"__CHANGE_ME__"];
+    NSDictionary *authTokens = [session authenticateWithUserName:@"__CHANGE_ME" password:@"__CHANGE_ME__"];
     
     STAssertNotNil(authTokens, @"Tumblr Authentication returned nil auth tokens");
     
+    NSArray *blogs = [session retrievListOfBlogs];
+    
+    STAssertNotNil(blogs, @"Blogs are nil.");
+    
+    BOOL createPost = [session postToTumblrDomain:session.defaultBlogName title:@"testing" body:@"<p>this is a body.</p>"];
+    
+    STAssertTrue(createPost, @"Didn't create post.");
 }
 
 @end
