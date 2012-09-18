@@ -20,8 +20,8 @@
     
     session = [[TumblrSession alloc] init];
     session.host = @"http://www.tumblr.com";
-    session.consumerKey = @"__CHANGE_ME__";
-    session.consumerSecret = @"__CHANGE_ME__";
+    session.consumerKey = @"0z1vfCKYOvW8iZRiXYKbPZ8zGUoymG35te5S8lh6rsNJDZ3htz";
+    session.consumerSecret = @"JOoevzFuTJZ8i5jjhzf3d0aC8CMWEAmnkfoev69qYssrwSBis6";
 }
 
 - (void)tearDown
@@ -33,7 +33,7 @@
 
 - (void)testExample
 {
-    NSDictionary *authTokens = [session authenticateWithUserName:@"__CHANGE_ME" password:@"__CHANGE_ME__"];
+    NSDictionary *authTokens = [session authenticateWithUserName:@"ash@ashfurrow.com" password:@"P@ssword1"];
     
     STAssertNotNil(authTokens, @"Tumblr Authentication returned nil auth tokens");
     
